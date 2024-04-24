@@ -6,6 +6,62 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form name="frm" method="POST">
+        <table border="1px">
+            <tr>
+                <td align="center"> Máy tính đơn giản </td>
+            </tr>
+            <tr>
+                <td>
+                    Số thứ nhất : 
+                    <input type="text" name="so1" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Số thứ hai : 
+                    <input type="text" name="so1" >
+                </td>
+            </tr>
+            <tr>
+                <td align="center"> 
+                    <input onClick="mayTinh(this.value)" type="button" name="+" value="+">
+                    <input onClick="mayTinh(this.value)" type="button" name="-" value="-">
+                    <input onClick="mayTinh(this.value)" type="button" name="x" value="x">
+                    <input onClick="mayTinh(this.value)" type="button" name=":" value=":">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Kết quả :
+                    <input type="text" name="kq">
+                </td>
+            </tr>
+        </table>
+
+        <script>
+            let st1 = Number(document.frm.so1.value) ;
+            let st2 = Number(document.frm.so2.value) ;
+            let result = document.frm.kq.value ;
+            function mayTinh(pt){
+                switch(pt)
+                {
+                    case "+":
+                        result = st1 + st2 ;
+                        break ;
+                    case "-":
+                        result = st1 - st2 ;
+                        break ;
+                    case "*":
+                        result = st1 * st2 ;
+                        break ;
+                    case "/":
+                        if(st2 == 0) result = "Không hợp lệ" ;
+                        else result = st1 / st2 ;
+                        break ;
+                }
+                document.frm.kq.value = result ;
+            }
+        </script>
 </body>
 </html>
